@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    button.active {
+      background-color: rgb(186, 226, 174);
+    }
+
+    .content {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #333;
+      line-height: 200px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="./vue.global.js"></script>
+  <div id="app">
+    <button @click="switchTab(0)" :class="{active: activeIndex === 0}">选项1</button>
+    <button @click="switchTab(1)" :class="{active: activeIndex === 1}">选项2</button>
+    <button @click="switchTab(2)" :class="{active: activeIndex === 2}">选项3</button>
+    <button @click="switchTab(3)" :class="{active: activeIndex === 3}">选项4</button>
+    <div class="content" v-show="activeIndex === 0">热点</div>
+    <div class="content" v-show="activeIndex === 1">军事</div>
+    <div class="content" v-show="activeIndex === 2">娱乐</div>
+    <div class="content" v-show="activeIndex === 3">知识</div>
+  </div>
+  <script>
+    const { createApp } = Vue
+    const app = createApp({
+      data() {
+        return {
+          activeIndex: 0
+        }
+      },
+      methods: {
+        switchTab(index) {
+          this.activeIndex = index
+        }
+      }
+    })
+    app.mount('#app')
+  </script>
+  <!-- <div id="app">
+    <button @click="switchTab(0)" :class="{active: activeIndex === 0}">标题1</button>
+    <button @click="switchTab(1)" :class="{active: activeIndex === 1}">标题2</button>
+    <button @click="switchTab(2)" :class="{active: activeIndex === 2}">标题3</button>
+    <div class="content" v-show="activeIndex === 0">内容1</div>
+    <div class="content" v-show="activeIndex === 1">内容2</div>
+    <div class="content" v-show="activeIndex === 2">内容3</div>
+  </div>
+  <script>
+    const { createApp } = Vue;
+    const app = createApp({
+      data() {
+        return {
+          activeIndex: 0
+        };
+      },
+      methods: {
+        switchTab(index) {
+          this.activeIndex = index;
+        }
+      },
+    });
+    app.mount("#app"); -->
+  </script>
+</body>
+
+</html>

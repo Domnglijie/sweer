@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面试题</title>
+</head>
+
+<body>
+    v-if和v-show异同
+    v-if显示效果同 v-show 绑定布尔值 true 元素显示 false 元素隐藏相同
+    不同点：
+    false时,v-show控制 display: none 元素隐藏， v-if直接从节点移除该元素
+    使用场景：
+    v-show具有更高切换性能,适用于 切换频率高的场景 如 tab选项卡
+    v-if 具有更高的 初始加载性能 (false),比如 侧边弹出层
+    + v-else 结合 v-if一起使用
+    注意： v-else绑定元素必须是 v-if绑定元素的下一个兄弟
+</body>
+
+</html>
